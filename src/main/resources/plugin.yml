@@ -1,6 +1,6 @@
 main: me.trqhxrd.veinminer.VeinMiner
 version: ${project.version}
-api-version: 1.18.2
+api-version: 1.18
 
 name: VeinMiner
 author: Trqhxrd
