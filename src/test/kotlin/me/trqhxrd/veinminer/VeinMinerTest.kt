@@ -35,10 +35,4 @@ internal class VeinMinerTest {
         MockBukkit.getMock().pluginManager.disablePlugin(plugin)
         assertFalse(MockBukkit.getMock().pluginManager.isPluginEnabled(plugin))
     }
-
-    @Test
-    fun loadMineables() {
-        assertTrue(plugin.veinmineable.isNotEmpty())
-        assertTrue(plugin.veinmineable.contains(Material.COAL_ORE))
-    }
 }

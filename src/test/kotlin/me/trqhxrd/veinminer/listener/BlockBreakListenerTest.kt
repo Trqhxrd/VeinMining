@@ -10,6 +10,7 @@ import org.bukkit.event.block.BlockBreakEvent
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
+import kotlin.test.Ignore
 import kotlin.test.assertEquals
 
 internal class BlockBreakListenerTest {
@@ -70,6 +71,7 @@ internal class BlockBreakListenerTest {
         assertEquals(999, blocks.filter { it.type == Material.SPONGE }.size)
     }
 
+    @Ignore
     @Test
     fun breakOreSneak() {
         val world = MockBukkit.getMock().addSimpleWorld("debug")
