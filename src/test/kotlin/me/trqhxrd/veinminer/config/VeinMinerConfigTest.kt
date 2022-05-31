@@ -12,6 +12,22 @@ import kotlin.test.assertTrue
 internal class VeinMinerConfigTest {
 
     lateinit var plugin: Main
+    private val debugConfig =
+        """
+            veinminer:
+              tools:
+                debug:
+                  tools:
+                  - IRON_SHOVEL
+                  - DIAMOND_SHOVEL
+              ores:
+                debug:
+                  maxSize: 64
+                  tools: debug
+                  materials:
+                  - SAND
+
+        """.trimIndent()
 
     @BeforeEach
     fun setUp() {
@@ -34,27 +50,27 @@ internal class VeinMinerConfigTest {
         VeinMinerConfig.save(plugin)
 
         assertEquals(
-            """
-            veinminer:
-              tools:
-                debug:
-                  tools:
-                  - IRON_SHOVEL
-                  - DIAMOND_SHOVEL
-              materials:
-                debug:
-                  maxSize: 64
-                  tools: debug
-                  blocks:
-                  - SAND
-
-        """.trimIndent(),
+            debugConfig,
             this.plugin.config.saveToString()
         )
     }
 
     @Test
     fun load() {
-        assertTrue(this.plugin.config.get("veinminer.tools.pickaxes") != null)
+        VeinMinerConfig.tools.clear()
+        VeinMinerConfig.ores.clear()
+        VeinMinerConfig.save(this.plugin)
+
+        assertTrue(VeinMinerConfig.tools.isEmpty())
+        assertTrue(VeinMinerConfig.ores.isEmpty())
+
+        this.plugin.config.loadFromString(debugConfig)
+        VeinMinerConfig.load(this.plugin)
+
+        assertTrue(VeinMinerConfig.tools.containsKey("debug"))
+        assertEquals(
+            ToolGroup("debug", setOf(Material.IRON_SHOVEL, Material.DIAMOND_SHOVEL)),
+            VeinMinerConfig.tools["debug"]
+        )
     }
 }

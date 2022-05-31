@@ -2,10 +2,13 @@ package me.trqhxrd.veinminer.listener
 
 import me.trqhxrd.veinminer.config.VeinMinerConfig
 import me.trqhxrd.veinminer.detectors.DefaultDetector
+import org.bukkit.GameMode
 import org.bukkit.block.Block
+import org.bukkit.enchantments.Enchantment
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.block.BlockBreakEvent
+import org.bukkit.inventory.meta.Damageable
 
 object BlockBreakListener : Listener {
 
@@ -21,6 +24,25 @@ object BlockBreakListener : Listener {
         val detected = mutableSetOf<Block>()
         val detector = DefaultDetector(oreGroup.maxSize)
         detector.scan(e.block, detected)
-        detected.forEach { it.breakNaturally(e.player.inventory.itemInMainHand) }
+
+        var meta: Damageable? = null
+        var level = 0
+
+        if (e.player.inventory.itemInMainHand.itemMeta is Damageable) {
+            meta = e.player.inventory.itemInMainHand.itemMeta as Damageable
+            level = e.player.inventory.itemInMainHand.getEnchantmentLevel(Enchantment.DURABILITY)
+        }
+
+        for (block in detected) {
+            block.breakNaturally(e.player.inventory.itemInMainHand)
+            if (meta != null && e.player.gameMode == GameMode.SURVIVAL) {
+                if ((0..level).random() == 0) {
+                    meta.damage += 1
+                    if (meta.damage > e.player.inventory.itemInMainHand.type.maxDurability - 64) break
+                }
+            }
+        }
+
+        if (meta != null) e.player.inventory.itemInMainHand.itemMeta = meta
     }
 }
