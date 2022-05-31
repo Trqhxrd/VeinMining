@@ -1,7 +1,6 @@
 package me.trqhxrd.veinminer
 
 import be.seeseemelk.mockbukkit.MockBukkit
-import org.bukkit.Material
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.BeforeEach
@@ -11,12 +10,12 @@ import kotlin.test.assertFalse
 
 internal class VeinMinerTest {
 
-    lateinit var plugin: VeinMiner
+    lateinit var plugin: Main
 
     @BeforeEach
     fun setUp() {
         MockBukkit.mock()
-        plugin = MockBukkit.load(VeinMiner::class.java)
+        plugin = MockBukkit.load(Main::class.java)
     }
 
     @AfterEach
@@ -27,18 +26,12 @@ internal class VeinMinerTest {
     @Test
     fun onEnable() {
         assertTrue(MockBukkit.getMock().pluginManager.isPluginEnabled(plugin))
-        assertEquals(plugin, VeinMiner.instance)
+        assertEquals(plugin, VeinMiner.plugin)
     }
 
     @Test
     fun onDisable() {
         MockBukkit.getMock().pluginManager.disablePlugin(plugin)
         assertFalse(MockBukkit.getMock().pluginManager.isPluginEnabled(plugin))
-    }
-
-    @Test
-    fun loadMineables() {
-        assertTrue(plugin.veinmineable.isNotEmpty())
-        assertTrue(plugin.veinmineable.contains(Material.COAL_ORE))
     }
 }

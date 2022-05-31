@@ -1,4 +1,4 @@
-main: me.trqhxrd.veinminer.VeinMiner
+main: me.trqhxrd.veinminer.Main
 version: ${project.version}
 api-version: 1.18
 
