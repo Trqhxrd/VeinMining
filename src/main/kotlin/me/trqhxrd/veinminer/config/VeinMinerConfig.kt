@@ -1,67 +1,72 @@
 package me.trqhxrd.veinminer.config
 
-import me.trqhxrd.veinminer.VeinMiner
-import org.bukkit.Material
-import org.bukkit.configuration.serialization.ConfigurationSerializable
+import me.trqhxrd.veinminer.config.defaults.*
+import org.bukkit.Material.valueOf
+import org.bukkit.plugin.java.JavaPlugin
 
-/**
- * This is the config
- */
-class VeinMinerConfig(
-    val plugin: VeinMiner,
-    val toolGroups: MutableMap<String, Group> = mutableMapOf()
-) : ConfigurationSerializable {
+object VeinMinerConfig {
+    val tools = mutableMapOf<String, ToolGroup>()
+    val ores = mutableMapOf<String, OreGroup>()
 
-    @Suppress("UNCHECKED_CAST")
-    constructor(map: Map<String, Any>) : this(
-        VeinMiner.instance,
-        map["groups"] as MutableMap<String, Group>
-    )
+    fun save(plugin: JavaPlugin) {
+        plugin.config.set("veinminer", null)
 
-    /**
-     * Creates a Map representation of this class.
-     *
-     *
-     * This class must provide a method to restore this class, as defined in
-     * the [ConfigurationSerializable] interface javadocs.
-     *
-     * @return Map containing the current state of this class
-     */
-    override fun serialize() = buildMap {
-        this["groups"] = this@VeinMinerConfig.toolGroups
+        this.tools.values.forEach { tool ->
+            plugin.config.set(
+                "veinminer.tools.${tool.name}.tools",
+                tool.tools.map { it.name }.toList()
+            )
+        }
+
+        this.ores.values.forEach { group ->
+            plugin.config.set("veinminer.materials.${group.name}.permission", group.permission)
+            plugin.config.set("veinminer.materials.${group.name}.maxSize", group.maxSize)
+            plugin.config.set("veinminer.materials.${group.name}.tools", group.tools.name)
+            plugin.config.set("veinminer.materials.${group.name}.blocks", group.blocks.map { it.name }.toTypedArray())
+        }
+
+        plugin.saveConfig()
     }
 
-    data class Group(
-        val name: String,
-        val permission: String?,
-        val maxSize: Int,
-        val tools: Set<Material>,
-        val materials: Set<Material>
-    ) : ConfigurationSerializable {
-        @Suppress("UNCHECKED_CAST")
-        constructor(map: Map<String, Any>) : this(
-            map["name"] as String,
-            map["permission"] as String?,
-            map["maxSize"] as Int,
-            (map["tools"] as Array<String>).map { Material.valueOf(it) }.toSet(),
-            (map["materials"] as Array<String>).map { Material.valueOf(it) }.toSet()
-        )
-
-        /**
-         * Creates a Map representation of this class.
-         *
-         *
-         * This class must provide a method to restore this class, as defined in
-         * the [ConfigurationSerializable] interface javadocs.
-         *
-         * @return Map containing the current state of this class
-         */
-        override fun serialize() = buildMap {
-            this["name"] = this@Group.name
-            this["permission"] = this@Group.permission
-            this["maxSize"] = this@Group.maxSize
-            this["tools"] = this@Group.tools.map { it.name }.toTypedArray()
-            this["materials"] = this@Group.materials.map { it.name }.toTypedArray()
+    fun load(plugin: JavaPlugin) {
+        if (!plugin.config.contains("veinminer")) {
+            this.setup(plugin)
+            return
         }
+
+        val tools = plugin.config.getConfigurationSection("veinminer.tools")!!
+        tools.getKeys(false).forEach { group ->
+            val section = tools.getConfigurationSection(group)!!
+            this@VeinMinerConfig.tools[group] =
+                ToolGroup(group, section.getStringList("tools").map { valueOf(it) }.toSet())
+        }
+
+        val materials = plugin.config.getConfigurationSection("veinminer.materials")!!
+        materials.getKeys(false).forEach { material ->
+            val section = materials.getConfigurationSection(material)!!
+            section.getKeys(false).forEach { name ->
+                this.ores[name] = OreGroup(
+                    name,
+                    section.getStringList("blocks").map { valueOf(it) }.toSet(),
+                    section.getString("permission", null),
+                    this.tools[section.getString("tools")]!!,
+                    section.getInt("maxSize", 64)
+                )
+            }
+        }
+    }
+
+    fun setup(plugin: JavaPlugin) {
+        this.tools[Pickaxes.name] = Pickaxes
+        this.tools[Axes.name] = Axes
+        this.tools[Shovels.name] = Shovels
+        this.tools[Hoes.name] = Hoes
+
+        this.ores[Ores.name] = Ores
+        this.ores[Wood.name] = Wood
+        this.ores[Sand.name] = Sand
+        this.ores[Leaves.name] = Leaves
+
+        this.save(plugin)
     }
 }
