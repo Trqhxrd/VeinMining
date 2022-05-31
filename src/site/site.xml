@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/DECORATION/1.8.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/DECORATION/1.8.0 http://maven.apache.org/xsd/decoration-1.8.0.xsd"
+         name="VeinMiner">
+    <bannerLeft>
+        <name>Project Name</name>
+        <src>https://maven.apache.org/images/apache-maven-project.png</src>
+        <href>https://maven.apache.org/</href>
+    </bannerLeft>
+
+    <body>
+        <menu name="Overview">
+            <item name="Summary" href="summary.html"/>
+            <item name="API Reference" href="api-ref/index.html"/>
+        </menu>
+        <menu name="Reports">
+            <item name="Project Info" href="project-info.html"/>
+            <item name="Surefire Results" href="surefire-report.html"/>
+            <item name="Dependencies" href="dependencies.html"/>
+            <item name="Dependency Info" href="dependency-info.html"/>
+            <item name="Distribution Management" href="distribution-management.html"/>
+            <item name="Plugins" href="plugins.html"/>
+            <item name="Plugin Management" href="plugin-management.html"/>
+        </menu>
+    </body>
+
+    <skin>
+        <groupId>org.apache.maven.skins</groupId>
+        <artifactId>maven-fluido-skin</artifactId>
+        <version>1.8</version>
+    </skin>
+</project>
