@@ -1,6 +1,7 @@
 package me.trqhxrd.veinminer
 
 import be.seeseemelk.mockbukkit.MockBukkit
+import me.trqhxrd.veinminer.plugin.Main
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.BeforeEach

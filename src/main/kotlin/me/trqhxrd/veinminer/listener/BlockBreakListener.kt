@@ -2,6 +2,7 @@ package me.trqhxrd.veinminer.listener
 
 import me.trqhxrd.veinminer.config.VeinMinerConfig
 import me.trqhxrd.veinminer.detectors.DefaultDetector
+import me.trqhxrd.veinminer.player.VeinMineUser
 import org.bukkit.GameMode
 import org.bukkit.block.Block
 import org.bukkit.enchantments.Enchantment
@@ -10,14 +11,15 @@ import org.bukkit.event.Listener
 import org.bukkit.event.block.BlockBreakEvent
 import org.bukkit.inventory.meta.Damageable
 
-object BlockBreakListener : Listener {
+class BlockBreakListener : Listener {
 
     @EventHandler
     fun onBlockBreak(e: BlockBreakEvent) {
         if (!e.player.isSneaking) return
+        val user = VeinMineUser.user(e.player)
+        if (!user.veinmineEnabled) return
 
         val oreGroup = VeinMinerConfig.ores.values.firstOrNull { it.blocks.contains(e.block.type) } ?: return
-        println(oreGroup.toString())
         if (!oreGroup.tools.tools.contains(e.player.inventory.itemInMainHand.type)) return
         if (oreGroup.permission != null && !e.player.hasPermission(oreGroup.permission)) return
 
