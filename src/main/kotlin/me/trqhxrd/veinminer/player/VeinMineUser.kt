@@ -28,7 +28,7 @@ class VeinMineUser(
         file.createNewFile()
         val config = YamlConfiguration()
         config.set("name", this.player.name)
-        config.set("uuid", this.player.uniqueId)
+        config.set("uuid", this.player.uniqueId.toString())
         config.set("veinmine.enabled", this.veinmineEnabled)
 
         config.save(file)

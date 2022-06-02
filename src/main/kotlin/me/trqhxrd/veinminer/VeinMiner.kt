@@ -20,6 +20,8 @@ object VeinMiner {
         Bukkit.getPluginManager().registerEvents(BlockBreakListener(), this.plugin)
         Bukkit.getPluginManager().registerEvents(PlayerQuitListener(), this.plugin)
         Bukkit.getPluginManager().registerEvents(PlayerJoinListener(this.plugin), this.plugin)
+
+        Bukkit.getOnlinePlayers().forEach { VeinMineUser(this.plugin, it) }
     }
 
     fun disable() {

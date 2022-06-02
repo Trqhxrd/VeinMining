@@ -14,6 +14,8 @@ object Ores : OreGroup(
         LAPIS_ORE,
         REDSTONE_ORE,
         DIAMOND_ORE,
+        EMERALD_ORE,
+        DEEPSLATE_COPPER_ORE,
         DEEPSLATE_COAL_ORE,
         DEEPSLATE_IRON_ORE,
         DEEPSLATE_GOLD_ORE,
@@ -21,6 +23,7 @@ object Ores : OreGroup(
         DEEPSLATE_LAPIS_ORE,
         DEEPSLATE_REDSTONE_ORE,
         DEEPSLATE_DIAMOND_ORE,
+        DEEPSLATE_EMERALD_ORE,
         ANCIENT_DEBRIS,
         NETHER_QUARTZ_ORE,
         NETHER_GOLD_ORE
