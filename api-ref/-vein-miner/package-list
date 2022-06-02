@@ -38,13 +38,39 @@ $dokka.location:me.trqhxrd.veinminer.detectors/Detector///PointingToDeclaration/
 $dokka.location:me.trqhxrd.veinminer.detectors/Detector/scan/#org.bukkit.block.Block#kotlin.collections.MutableSet[org.bukkit.block.Block]/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.detectors/-detector/scan.html
 $dokka.location:me.trqhxrd.veinminer.listener////PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.listener/index.html
 $dokka.location:me.trqhxrd.veinminer.listener/BlockBreakListener///PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.listener/-block-break-listener/index.html
+$dokka.location:me.trqhxrd.veinminer.listener/BlockBreakListener/BlockBreakListener/#/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.listener/-block-break-listener/-block-break-listener.html
 $dokka.location:me.trqhxrd.veinminer.listener/BlockBreakListener/onBlockBreak/#org.bukkit.event.block.BlockBreakEvent/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.listener/-block-break-listener/on-block-break.html
+$dokka.location:me.trqhxrd.veinminer.listener/PlayerJoinListener///PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.listener/-player-join-listener/index.html
+$dokka.location:me.trqhxrd.veinminer.listener/PlayerJoinListener/PlayerJoinListener/#org.bukkit.plugin.java.JavaPlugin/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.listener/-player-join-listener/-player-join-listener.html
+$dokka.location:me.trqhxrd.veinminer.listener/PlayerJoinListener/onPlayerJoin/#org.bukkit.event.player.PlayerJoinEvent/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.listener/-player-join-listener/on-player-join.html
+$dokka.location:me.trqhxrd.veinminer.listener/PlayerJoinListener/plugin/#/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.listener/-player-join-listener/plugin.html
+$dokka.location:me.trqhxrd.veinminer.listener/PlayerQuitListener///PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.listener/-player-quit-listener/index.html
+$dokka.location:me.trqhxrd.veinminer.listener/PlayerQuitListener/PlayerQuitListener/#/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.listener/-player-quit-listener/-player-quit-listener.html
+$dokka.location:me.trqhxrd.veinminer.listener/PlayerQuitListener/onPlayerQuit/#org.bukkit.event.player.PlayerQuitEvent/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.listener/-player-quit-listener/on-player-quit.html
+$dokka.location:me.trqhxrd.veinminer.player////PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.player/index.html
+$dokka.location:me.trqhxrd.veinminer.player/VeinMineUser.Companion///PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.player/-vein-mine-user/-companion/index.html
+$dokka.location:me.trqhxrd.veinminer.player/VeinMineUser.Companion/user/#org.bukkit.entity.Player/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.player/-vein-mine-user/-companion/user.html
+$dokka.location:me.trqhxrd.veinminer.player/VeinMineUser.Companion/users/#/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.player/-vein-mine-user/-companion/users.html
+$dokka.location:me.trqhxrd.veinminer.player/VeinMineUser///PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.player/-vein-mine-user/index.html
+$dokka.location:me.trqhxrd.veinminer.player/VeinMineUser/VeinMineUser/#org.bukkit.plugin.java.JavaPlugin#org.bukkit.entity.Player#kotlin.Boolean#java.io.File/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.player/-vein-mine-user/-vein-mine-user.html
+$dokka.location:me.trqhxrd.veinminer.player/VeinMineUser/file/#/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.player/-vein-mine-user/file.html
+$dokka.location:me.trqhxrd.veinminer.player/VeinMineUser/load/#/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.player/-vein-mine-user/load.html
+$dokka.location:me.trqhxrd.veinminer.player/VeinMineUser/player/#/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.player/-vein-mine-user/player.html
+$dokka.location:me.trqhxrd.veinminer.player/VeinMineUser/plugin/#/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.player/-vein-mine-user/plugin.html
+$dokka.location:me.trqhxrd.veinminer.player/VeinMineUser/save/#/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.player/-vein-mine-user/save.html
+$dokka.location:me.trqhxrd.veinminer.player/VeinMineUser/veinmineEnabled/#/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.player/-vein-mine-user/veinmine-enabled.html
+$dokka.location:me.trqhxrd.veinminer.plugin.command////PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.plugin.command/index.html
+$dokka.location:me.trqhxrd.veinminer.plugin.command/VeinMineCommand///PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.plugin.command/-vein-mine-command/index.html
+$dokka.location:me.trqhxrd.veinminer.plugin.command/VeinMineCommand/VeinMineCommand/#org.bukkit.plugin.java.JavaPlugin/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.plugin.command/-vein-mine-command/-vein-mine-command.html
+$dokka.location:me.trqhxrd.veinminer.plugin.command/VeinMineCommand/onCommand/#org.bukkit.command.CommandSender#org.bukkit.command.Command#kotlin.String#kotlin.Array[kotlin.String]/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.plugin.command/-vein-mine-command/on-command.html
+$dokka.location:me.trqhxrd.veinminer.plugin.command/VeinMineCommand/onTabComplete/#org.bukkit.command.CommandSender#org.bukkit.command.Command#kotlin.String#kotlin.Array[kotlin.String]/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.plugin.command/-vein-mine-command/on-tab-complete.html
+$dokka.location:me.trqhxrd.veinminer.plugin////PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.plugin/index.html
+$dokka.location:me.trqhxrd.veinminer.plugin/Main///PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.plugin/-main/index.html
+$dokka.location:me.trqhxrd.veinminer.plugin/Main/Main/#/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.plugin/-main/-main.html
+$dokka.location:me.trqhxrd.veinminer.plugin/Main/Main/#org.bukkit.plugin.java.JavaPluginLoader#org.bukkit.plugin.PluginDescriptionFile#java.io.File#java.io.File/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.plugin/-main/-main.html
+$dokka.location:me.trqhxrd.veinminer.plugin/Main/onDisable/#/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.plugin/-main/on-disable.html
+$dokka.location:me.trqhxrd.veinminer.plugin/Main/onEnable/#/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer.plugin/-main/on-enable.html
 $dokka.location:me.trqhxrd.veinminer////PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer/index.html
-$dokka.location:me.trqhxrd.veinminer/Main///PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer/-main/index.html
-$dokka.location:me.trqhxrd.veinminer/Main/Main/#/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer/-main/-main.html
-$dokka.location:me.trqhxrd.veinminer/Main/Main/#org.bukkit.plugin.java.JavaPluginLoader#org.bukkit.plugin.PluginDescriptionFile#java.io.File#java.io.File/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer/-main/-main.html
-$dokka.location:me.trqhxrd.veinminer/Main/onDisable/#/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer/-main/on-disable.html
-$dokka.location:me.trqhxrd.veinminer/Main/onEnable/#/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer/-main/on-enable.html
 $dokka.location:me.trqhxrd.veinminer/VeinMiner///PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer/-vein-miner/index.html
 $dokka.location:me.trqhxrd.veinminer/VeinMiner/disable/#/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer/-vein-miner/disable.html
 $dokka.location:me.trqhxrd.veinminer/VeinMiner/enable/#org.bukkit.plugin.java.JavaPlugin/PointingToDeclaration/-vein-miner/me.trqhxrd.veinminer/-vein-miner/enable.html
@@ -54,4 +80,7 @@ me.trqhxrd.veinminer.config
 me.trqhxrd.veinminer.config.defaults
 me.trqhxrd.veinminer.detectors
 me.trqhxrd.veinminer.listener
+me.trqhxrd.veinminer.player
+me.trqhxrd.veinminer.plugin
+me.trqhxrd.veinminer.plugin.command
 
