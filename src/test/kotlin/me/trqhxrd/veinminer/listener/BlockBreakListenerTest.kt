@@ -1,7 +1,8 @@
 package me.trqhxrd.veinminer.listener
 
 import be.seeseemelk.mockbukkit.MockBukkit
-import me.trqhxrd.veinminer.Main
+import me.trqhxrd.veinminer.plugin.Main
+import me.trqhxrd.veinminer.player.VeinMineUser
 import org.bukkit.Location
 import org.bukkit.Material
 import org.bukkit.block.Block
@@ -116,6 +117,31 @@ internal class BlockBreakListenerTest {
 
         assertEquals(Material.AIR, block.type)
         assertEquals(935, blocks.filter { it.type == Material.COAL_ORE }.size)
+    }
+
+    @Test
+    fun breakBlockVeinMineToggleOff() {
+        val world = MockBukkit.getMock().addSimpleWorld("debug")
+        val blocks = buildSet<Block> {
+            for (x in 0..9)
+                for (y in 0..9)
+                    for (z in 0..9)
+                        this.add(world.getBlockAt(x, y, z))
+        }
+
+        blocks.forEach { it.type = Material.COAL_ORE }
+
+        val block = world.getBlockAt(0, 9, 0)
+        val p = MockBukkit.getMock().addPlayer()
+        p.isSneaking = true
+        p.isOp = true
+        p.teleport(Location(world, 0.0, 10.0, 0.0))
+        VeinMineUser.user(p).veinmineEnabled = false
+        p.inventory.setItemInMainHand(ItemStack(Material.IRON_PICKAXE))
+        breakBlock(p, block)
+
+        assertEquals(Material.AIR, block.type)
+        assertEquals(999, blocks.filter { it.type == Material.COAL_ORE }.size)
     }
 
     private fun breakBlock(player: Player, block: Block) {

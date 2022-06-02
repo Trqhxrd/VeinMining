@@ -1,7 +1,7 @@
 package me.trqhxrd.veinminer.config
 
 import be.seeseemelk.mockbukkit.MockBukkit
-import me.trqhxrd.veinminer.Main
+import me.trqhxrd.veinminer.plugin.Main
 import org.bukkit.Material
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
