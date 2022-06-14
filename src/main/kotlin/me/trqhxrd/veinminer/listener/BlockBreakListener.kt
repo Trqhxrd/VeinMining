@@ -4,6 +4,7 @@ import me.trqhxrd.veinminer.config.VeinMinerConfig
 import me.trqhxrd.veinminer.detectors.DefaultDetector
 import me.trqhxrd.veinminer.player.VeinMineUser
 import org.bukkit.GameMode
+import org.bukkit.Statistic
 import org.bukkit.block.Block
 import org.bukkit.enchantments.Enchantment
 import org.bukkit.event.EventHandler
@@ -38,6 +39,7 @@ class BlockBreakListener : Listener {
 
         for (block in detected) {
             block.breakNaturally(itemInHand)
+            e.player.incrementStatistic(Statistic.MINE_BLOCK, block.type)
             if (meta != null && e.player.gameMode == GameMode.SURVIVAL) {
                 if ((0..level).random() == 0) {
                     meta.damage += 1
