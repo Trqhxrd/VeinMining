@@ -11,7 +11,6 @@ class GuiList(user: VeinMineUser, mode: Mode) : AbstractGui(Bukkit.createInvento
     }
 
     enum class Mode {
-        EDIT,
-        REMOVE
+        EDIT, REMOVE
     }
 }
